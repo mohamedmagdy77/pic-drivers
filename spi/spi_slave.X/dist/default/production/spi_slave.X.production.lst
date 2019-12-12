@@ -1,0 +1,571 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Sat Aug 31 23:23:52 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    11                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    12  0000                     
+    13                           ; Version 2.05
+    14                           ; Generated 20/12/2018 GMT
+    15                           ; 
+    16                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    17                           ; All rights reserved.
+    18                           ; 
+    19                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    20                           ; 
+    21                           ; Redistribution and use in source and binary forms, with or without modification, are
+    22                           ; permitted provided that the following conditions are met:
+    23                           ; 
+    24                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    25                           ;        conditions and the following disclaimer.
+    26                           ; 
+    27                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    28                           ;        of conditions and the following disclaimer in the documentation and/or other
+    29                           ;        materials provided with the distribution.
+    30                           ; 
+    31                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    32                           ;        software without specific prior written permission.
+    33                           ; 
+    34                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    35                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    36                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    37                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    38                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    39                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    40                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    41                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    42                           ; 
+    43                           ; 
+    44                           ; Code-generator required, PIC18F4550 Definitions
+    45                           ; 
+    46                           ; SFR Addresses
+    47  0000                     _LATD	set	3980
+    48  0000                     _TRISD	set	3989
+    49  0000                     _SSPBUF	set	4041
+    50  0000                     _SSPCON1	set	4038
+    51  0000                     _TRISA	set	3986
+    52  0000                     _TRISB	set	3987
+    53  0000                     _TRISC	set	3988
+    54  0000                     _SSPIF	set	31987
+    55  0000                     _CKP	set	32308
+    56  0000                     _CKE	set	32318
+    57  0000                     _SMP	set	32319
+    58                           
+    59                           ; #config settings
+    60  0000                     
+    61                           	psect	cinit
+    62  007F6A                     __pcinit:
+    63                           	opt callstack 0
+    64  007F6A                     start_initialization:
+    65                           	opt callstack 0
+    66  007F6A                     __initialization:
+    67                           	opt callstack 0
+    68  007F6A                     end_of_initialization:
+    69                           	opt callstack 0
+    70  007F6A                     __end_of__initialization:
+    71                           	opt callstack 0
+    72  007F6A  0100               	movlb	0
+    73  007F6C  EFBD  F03F         	goto	_main	;jump to C main() function
+    74                           
+    75                           	psect	cstackCOMRAM
+    76  000001                     __pcstackCOMRAM:
+    77                           	opt callstack 0
+    78  000001                     spi_init@sample:
+    79                           	opt callstack 0
+    80                           
+    81                           ; 1 bytes @ 0x0
+    82  000001                     	ds	1
+    83  000002                     spi_init@select:
+    84                           	opt callstack 0
+    85                           
+    86                           ; 1 bytes @ 0x1
+    87  000002                     	ds	1
+    88  000003                     spi_init@pol:
+    89                           	opt callstack 0
+    90                           
+    91                           ; 1 bytes @ 0x2
+    92  000003                     	ds	1
+    93  000004                     ??_spi_init:
+    94                           
+    95                           ; 1 bytes @ 0x3
+    96  000004                     	ds	1
+    97  000005                     spi_init@mode:
+    98                           	opt callstack 0
+    99                           
+   100                           ; 1 bytes @ 0x4
+   101  000005                     	ds	1
+   102  000006                     
+   103                           ; 1 bytes @ 0x5
+   104 ;;
+   105 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   106 ;;
+   107 ;; *************** function _main *****************
+   108 ;; Defined at:
+   109 ;;		line 11 in file "main.c"
+   110 ;; Parameters:    Size  Location     Type
+   111 ;;		None
+   112 ;; Auto vars:     Size  Location     Type
+   113 ;;		None
+   114 ;; Return value:  Size  Location     Type
+   115 ;;                  1    wreg      void 
+   116 ;; Registers used:
+   117 ;;		wreg, status,2, status,0, cstack
+   118 ;; Tracked objects:
+   119 ;;		On entry : 0/0
+   120 ;;		On exit  : 0/0
+   121 ;;		Unchanged: 0/0
+   122 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   123 ;;      Params:         0       0       0       0       0       0       0       0       0
+   124 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   125 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   126 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   127 ;;Total ram usage:        0 bytes
+   128 ;; Hardware stack levels required when called:    1
+   129 ;; This function calls:
+   130 ;;		_spi_init
+   131 ;;		_spi_recieve
+   132 ;; This function is called by:
+   133 ;;		Startup code after reset
+   134 ;; This function uses a non-reentrant model
+   135 ;;
+   136                           
+   137                           	psect	text0
+   138  007F7A                     __ptext0:
+   139                           	opt callstack 0
+   140  007F7A                     _main:
+   141                           	opt callstack 30
+   142                           
+   143                           ;main.c: 12:     spi_init(4,0,0,0);
+   144                           
+   145                           ;incstack = 0
+   146  007F7A  0E00               	movlw	0
+   147  007F7C  6E01               	movwf	spi_init@sample,c
+   148  007F7E  0E00               	movlw	0
+   149  007F80  6E02               	movwf	spi_init@select,c
+   150  007F82  0E00               	movlw	0
+   151  007F84  6E03               	movwf	spi_init@pol,c
+   152  007F86  0E04               	movlw	4
+   153  007F88  ECCC  F03F         	call	_spi_init
+   154                           
+   155                           ;main.c: 13:     TRISD = 0;
+   156  007F8C  0E00               	movlw	0
+   157  007F8E  6E95               	movwf	3989,c	;volatile
+   158  007F90                     l832:
+   159                           
+   160                           ;main.c: 15:        LATD = spi_recieve();
+   161  007F90  ECB8  F03F         	call	_spi_recieve	;wreg free
+   162  007F94  6E8C               	movwf	3980,c	;volatile
+   163  007F96  D7FC               	goto	l832
+   164  007F98                     __end_of_main:
+   165                           	opt callstack 0
+   166                           
+   167 ;; *************** function _spi_recieve *****************
+   168 ;; Defined at:
+   169 ;;		line 53 in file "spi_slave.c"
+   170 ;; Parameters:    Size  Location     Type
+   171 ;;		None
+   172 ;; Auto vars:     Size  Location     Type
+   173 ;;		None
+   174 ;; Return value:  Size  Location     Type
+   175 ;;                  1    wreg      unsigned char 
+   176 ;; Registers used:
+   177 ;;		wreg, status,2
+   178 ;; Tracked objects:
+   179 ;;		On entry : 0/0
+   180 ;;		On exit  : 0/0
+   181 ;;		Unchanged: 0/0
+   182 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   183 ;;      Params:         0       0       0       0       0       0       0       0       0
+   184 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   185 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   186 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   187 ;;Total ram usage:        0 bytes
+   188 ;; Hardware stack levels used:    1
+   189 ;; This function calls:
+   190 ;;		Nothing
+   191 ;; This function is called by:
+   192 ;;		_main
+   193 ;; This function uses a non-reentrant model
+   194 ;;
+   195                           
+   196                           	psect	text1
+   197  007F70                     __ptext1:
+   198                           	opt callstack 0
+   199  007F70                     _spi_recieve:
+   200                           	opt callstack 30
+   201                           
+   202                           ;spi_slave.c: 54:     while(SSPIF == 0){}
+   203                           
+   204                           ;incstack = 0
+   205  007F70  A69E               	btfss	3998,3,c	;volatile
+   206  007F72  D7FE               	goto	_spi_recieve
+   207                           
+   208                           ;spi_slave.c: 55:     SSPIF = 0;
+   209  007F74  969E               	bcf	3998,3,c	;volatile
+   210                           
+   211                           ;spi_slave.c: 56:     return (SSPBUF);
+   212  007F76  50C9               	movf	4041,w,c	;volatile
+   213  007F78  0012               	return		;funcret
+   214  007F7A                     __end_of_spi_recieve:
+   215                           	opt callstack 0
+   216                           
+   217 ;; *************** function _spi_init *****************
+   218 ;; Defined at:
+   219 ;;		line 12 in file "spi_slave.c"
+   220 ;; Parameters:    Size  Location     Type
+   221 ;;  mode            1    wreg     unsigned char 
+   222 ;;  sample          1    0[COMRAM] unsigned char 
+   223 ;;  select          1    1[COMRAM] unsigned char 
+   224 ;;  pol             1    2[COMRAM] unsigned char 
+   225 ;; Auto vars:     Size  Location     Type
+   226 ;;  mode            1    4[COMRAM] unsigned char 
+   227 ;; Return value:  Size  Location     Type
+   228 ;;                  1    wreg      void 
+   229 ;; Registers used:
+   230 ;;		wreg, status,2, status,0
+   231 ;; Tracked objects:
+   232 ;;		On entry : 0/0
+   233 ;;		On exit  : 0/0
+   234 ;;		Unchanged: 0/0
+   235 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   236 ;;      Params:         3       0       0       0       0       0       0       0       0
+   237 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   238 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   239 ;;      Totals:         5       0       0       0       0       0       0       0       0
+   240 ;;Total ram usage:        5 bytes
+   241 ;; Hardware stack levels used:    1
+   242 ;; This function calls:
+   243 ;;		Nothing
+   244 ;; This function is called by:
+   245 ;;		_main
+   246 ;; This function uses a non-reentrant model
+   247 ;;
+   248                           
+   249                           	psect	text2
+   250  007F98                     __ptext2:
+   251                           	opt callstack 0
+   252  007F98                     _spi_init:
+   253                           	opt callstack 30
+   254                           
+   255                           ;incstack = 0
+   256                           ;spi_init@mode stored from wreg
+   257  007F98  6E05               	movwf	spi_init@mode,c
+   258                           
+   259                           ;spi_slave.c: 13:     if(mode==5 || mode==4){
+   260  007F9A  0E05               	movlw	5
+   261  007F9C  1805               	xorwf	spi_init@mode,w,c
+   262  007F9E  B4D8               	btfsc	status,2,c
+   263  007FA0  D004               	goto	u120
+   264  007FA2  0E04               	movlw	4
+   265  007FA4  1805               	xorwf	spi_init@mode,w,c
+   266  007FA6  A4D8               	btfss	status,2,c
+   267  007FA8  D004               	goto	l796
+   268  007FAA                     u120:
+   269                           
+   270                           ;spi_slave.c: 14:         TRISC &= ~(1<<7);
+   271  007FAA  9E94               	bcf	3988,7,c	;volatile
+   272                           
+   273                           ;spi_slave.c: 15:         TRISB |= (1<<1);
+   274  007FAC  8293               	bsf	3987,1,c	;volatile
+   275                           
+   276                           ;spi_slave.c: 16:         TRISA |= (1<<5);
+   277  007FAE  8A92               	bsf	3986,5,c	;volatile
+   278                           
+   279                           ;spi_slave.c: 17:     }
+   280  007FB0  D002               	goto	l798
+   281  007FB2                     l796:
+   282                           
+   283                           ;spi_slave.c: 19:         TRISC &= ~(1<<7);
+   284  007FB2  9E94               	bcf	3988,7,c	;volatile
+   285                           
+   286                           ;spi_slave.c: 20:         TRISB &= ~(1<<1);
+   287  007FB4  9293               	bcf	3987,1,c	;volatile
+   288  007FB6                     l798:
+   289                           
+   290                           ;spi_slave.c: 22:     SSPCON1 = (SSPCON1 & 0xF0) | (mode & 0x0F);
+   291  007FB6  C005  F004         	movff	spi_init@mode,??_spi_init
+   292  007FBA  0E0F               	movlw	15
+   293  007FBC  1604               	andwf	??_spi_init,f,c
+   294  007FBE  50C6               	movf	4038,w,c	;volatile
+   295  007FC0  0BF0               	andlw	240
+   296  007FC2  1004               	iorwf	??_spi_init,w,c
+   297  007FC4  6EC6               	movwf	4038,c	;volatile
+   298                           
+   299                           ;spi_slave.c: 23:     if(sample==0){
+   300  007FC6  5001               	movf	spi_init@sample,w,c
+   301  007FC8  A4D8               	btfss	status,2,c
+   302  007FCA  D002               	goto	l804
+   303                           
+   304                           ;spi_slave.c: 24:         SMP = 0;
+   305  007FCC  9EC7               	bcf	4039,7,c	;volatile
+   306                           
+   307                           ;spi_slave.c: 25:     }
+   308  007FCE  D003               	goto	l808
+   309  007FD0                     l804:
+   310  007FD0  0401               	decf	spi_init@sample,w,c
+   311  007FD2  B4D8               	btfsc	status,2,c
+   312                           
+   313                           ;spi_slave.c: 27:         SMP = 1;
+   314  007FD4  8EC7               	bsf	4039,7,c	;volatile
+   315  007FD6                     l808:
+   316                           
+   317                           ;spi_slave.c: 29:     if(select==0){
+   318  007FD6  5002               	movf	spi_init@select,w,c
+   319  007FD8  A4D8               	btfss	status,2,c
+   320  007FDA  D002               	goto	l812
+   321                           
+   322                           ;spi_slave.c: 30:         CKE = 0;
+   323  007FDC  9CC7               	bcf	4039,6,c	;volatile
+   324                           
+   325                           ;spi_slave.c: 31:     }
+   326  007FDE  D003               	goto	l816
+   327  007FE0                     l812:
+   328  007FE0  0402               	decf	spi_init@select,w,c
+   329  007FE2  B4D8               	btfsc	status,2,c
+   330                           
+   331                           ;spi_slave.c: 33:         CKE = 1;
+   332  007FE4  8CC7               	bsf	4039,6,c	;volatile
+   333  007FE6                     l816:
+   334                           
+   335                           ;spi_slave.c: 35:     if(pol==0){
+   336  007FE6  5003               	movf	spi_init@pol,w,c
+   337  007FE8  A4D8               	btfss	status,2,c
+   338  007FEA  D002               	goto	l820
+   339                           
+   340                           ;spi_slave.c: 36:         CKP = 0;
+   341  007FEC  98C6               	bcf	4038,4,c	;volatile
+   342                           
+   343                           ;spi_slave.c: 37:     }
+   344  007FEE  D003               	goto	l824
+   345  007FF0                     l820:
+   346  007FF0  0403               	decf	spi_init@pol,w,c
+   347  007FF2  B4D8               	btfsc	status,2,c
+   348                           
+   349                           ;spi_slave.c: 39:         CKP = 1;
+   350  007FF4  88C6               	bsf	4038,4,c	;volatile
+   351  007FF6                     l824:
+   352                           
+   353                           ;spi_slave.c: 41:     SSPCON1 |= (1<<5);
+   354  007FF6  8AC6               	bsf	4038,5,c	;volatile
+   355                           
+   356                           ;spi_slave.c: 42:     SSPCON1 &= ~(1<<7);
+   357  007FF8  9EC6               	bcf	4038,7,c	;volatile
+   358                           
+   359                           ;spi_slave.c: 43:     SSPCON1 &= ~(1<<6);
+   360  007FFA  9CC6               	bcf	4038,6,c	;volatile
+   361                           
+   362                           ;spi_slave.c: 44:     SSPIF = 0;
+   363  007FFC  969E               	bcf	3998,3,c	;volatile
+   364  007FFE  0012               	return		;funcret
+   365  008000                     __end_of_spi_init:
+   366                           	opt callstack 0
+   367  0000                     
+   368                           	psect	rparam
+   369  0000                     tosu	equ	0xFFF
+   370                           tosh	equ	0xFFE
+   371                           tosl	equ	0xFFD
+   372                           stkptr	equ	0xFFC
+   373                           pclatu	equ	0xFFB
+   374                           pclath	equ	0xFFA
+   375                           pcl	equ	0xFF9
+   376                           tblptru	equ	0xFF8
+   377                           tblptrh	equ	0xFF7
+   378                           tblptrl	equ	0xFF6
+   379                           tablat	equ	0xFF5
+   380                           prodh	equ	0xFF4
+   381                           prodl	equ	0xFF3
+   382                           indf0	equ	0xFEF
+   383                           postinc0	equ	0xFEE
+   384                           postdec0	equ	0xFED
+   385                           preinc0	equ	0xFEC
+   386                           plusw0	equ	0xFEB
+   387                           fsr0h	equ	0xFEA
+   388                           fsr0l	equ	0xFE9
+   389                           wreg	equ	0xFE8
+   390                           indf1	equ	0xFE7
+   391                           postinc1	equ	0xFE6
+   392                           postdec1	equ	0xFE5
+   393                           preinc1	equ	0xFE4
+   394                           plusw1	equ	0xFE3
+   395                           fsr1h	equ	0xFE2
+   396                           fsr1l	equ	0xFE1
+   397                           bsr	equ	0xFE0
+   398                           indf2	equ	0xFDF
+   399                           postinc2	equ	0xFDE
+   400                           postdec2	equ	0xFDD
+   401                           preinc2	equ	0xFDC
+   402                           plusw2	equ	0xFDB
+   403                           fsr2h	equ	0xFDA
+   404                           fsr2l	equ	0xFD9
+   405                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      5       5
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_spi_init
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     426
+                           _spi_init
+                        _spi_recieve
+ ---------------------------------------------------------------------------------
+ (1) _spi_recieve                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _spi_init                                             5     2      3     426
+                                              0 COMRAM     5     2      3
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _spi_init
+   _spi_recieve
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      5       5       1        5.3%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BIGRAM             7FF      0       0      21        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Sat Aug 31 23:23:52 2019
+
+            __CFG_BORV$3 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000              __CFG_LVP$ON 000000  
+                    l820 7FF0                      l812 7FE0                      l804 7FD0  
+                    l824 7FF6                      l816 7FE6                      l808 7FD6  
+                    l832 7F90                      _CKE 007E3E                      l796 7FB2  
+                    l798 7FB6                      _CKP 007E34             __CFG_CPB$OFF 000000  
+                    u120 7FAA             __CFG_CPD$OFF 000000                      _SMP 007E3F  
+           __CFG_BOR$OFF 000000             __CFG_WDT$OFF 000000                     _LATD 000F8C  
+                   _main 7F7A             spi_init@mode 0005                     start 0000  
+          __CFG_IESO$OFF 000000            __CFG_MCLRE$ON 000000             ___param_bank 000000  
+          __CFG_PLLDIV$1 000000           __CFG_CCP2MX$ON 000000                    ?_main 0001  
+          __CFG_USBDIV$1 000000                    _TRISA 000F92                    _TRISB 000F93  
+                  _TRISC 000F94                    _TRISD 000F95                    _SSPIF 007CF3  
+          __CFG_PWRT$OFF 000000            __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000  
+          __CFG_WRT2$OFF 000000            __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000  
+         __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000  
+         __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
+          __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000                    status 000FD8  
+         __CFG_ICPRT$OFF 000000          __initialization 7F6A             __end_of_main 7F98  
+                 ??_main 0006            __activetblptr 000000                   _SSPBUF 000FC9  
+         __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000           spi_init@sample 0001  
+         spi_init@select 0002         __end_of_spi_init 8000             ?_spi_recieve 0001  
+             __accesstop 0060  __end_of__initialization 7F6A          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0001                  _SSPCON1 000FC6  
+        __CFG_VREGEN$OFF 000000                  __Hparam 0000                  __Lparam 0000  
+              ?_spi_init 0001                  __pcinit 7F6A                  __ramtop 0800  
+                __ptext0 7F7A                  __ptext1 7F70                  __ptext2 7F98  
+   end_of_initialization 7F6A     __size_of_spi_recieve 000A               ??_spi_init 0004  
+            spi_init@pol 0003      start_initialization 7F6A         __CFG_LPT1OSC$OFF 000000  
+      __size_of_spi_init 0068         __CFG_WDTPS$32768 000000            ??_spi_recieve 0001  
+               __Hrparam 0000                 __Lrparam 0000    __CFG_FOSC$INTOSCIO_EC 000000  
+          __size_of_main 001E      __end_of_spi_recieve 7F7A                 _spi_init 7F98  
+  __CFG_CPUDIV$OSC1_PLL2 000000              _spi_recieve 7F70  

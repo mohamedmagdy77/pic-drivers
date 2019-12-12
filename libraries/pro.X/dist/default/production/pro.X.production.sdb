@@ -1,0 +1,105 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"19 lcd_func.c
+[v _send_cmd send_cmd `(v  1 e 1 0 ]
+"36
+[v __init_lcd _init_lcd `(v  1 e 1 0 ]
+"49
+[v _send_chr send_chr `(v  1 e 1 0 ]
+"65
+[v _MSdelay MSdelay `(v  1 e 1 0 ]
+"72
+[v _send_string send_string `(v  1 e 1 0 ]
+"16 E:\mplab\projects\pro.X\pro.c
+[v _main main `(v  1 e 1 0 ]
+"3263 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4550.h
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"4001
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"10071
+[v _LD4 LD4 `VEb  1 e 0 @31844 ]
+"10074
+[v _LD5 LD5 `VEb  1 e 0 @31845 ]
+"16 E:\mplab\projects\pro.X\pro.c
+[v _main main `(v  1 e 1 0 ]
+{
+"20
+} 0
+"72 lcd_func.c
+[v _send_string send_string `(v  1 e 1 0 ]
+{
+[v send_string@row row `uc  1 a 1 wreg ]
+"73
+[v send_string@loc loc `uc  1 a 1 13 ]
+"72
+[v send_string@row row `uc  1 a 1 wreg ]
+[v send_string@col col `uc  1 p 1 9 ]
+[v send_string@string string `*.32uc  1 p 2 10 ]
+"74
+[v send_string@row row `uc  1 a 1 12 ]
+"86
+} 0
+"49
+[v _send_chr send_chr `(v  1 e 1 0 ]
+{
+[v send_chr@chr chr `uc  1 a 1 wreg ]
+"50
+[v send_chr@copy copy `uc  1 a 1 7 ]
+"49
+[v send_chr@chr chr `uc  1 a 1 wreg ]
+[v send_chr@chr chr `uc  1 a 1 8 ]
+"63
+} 0
+"36
+[v __init_lcd _init_lcd `(v  1 e 1 0 ]
+{
+"47
+} 0
+"19
+[v _send_cmd send_cmd `(v  1 e 1 0 ]
+{
+[v send_cmd@cmd cmd `uc  1 a 1 wreg ]
+"20
+[v send_cmd@copy copy `uc  1 a 1 7 ]
+"19
+[v send_cmd@cmd cmd `uc  1 a 1 wreg ]
+[v send_cmd@cmd cmd `uc  1 a 1 8 ]
+"33
+} 0
+"65
+[v _MSdelay MSdelay `(v  1 e 1 0 ]
+{
+"67
+[v MSdelay@j j `ui  1 a 2 4 ]
+[v MSdelay@i i `ui  1 a 2 2 ]
+"65
+[v MSdelay@val val `ui  1 p 2 0 ]
+"70
+} 0

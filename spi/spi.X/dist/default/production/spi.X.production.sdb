@@ -1,0 +1,83 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"11 D:\mplab\projects\spi\spi.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"12 D:\mplab\projects\spi\spi.X\spi.c
+[v _spi_init spi_init `(v  1 e 1 0 ]
+"47
+[v _spi_send spi_send `(v  1 e 1 0 ]
+"3427 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4550.h
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3847
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"6868
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"7193
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"9147
+[v _CKE CKE `VEb  1 e 0 @32318 ]
+"9150
+[v _CKP CKP `VEb  1 e 0 @32308 ]
+"10044
+[v _LC0 LC0 `VEb  1 e 0 @31832 ]
+"10569
+[v _SMP SMP `VEb  1 e 0 @32319 ]
+"10644
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
+"11 D:\mplab\projects\spi\spi.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"18
+[v main@x x `i  1 a 2 5 ]
+"16
+[v main@i i `i  1 a 2 7 ]
+"22
+} 0
+"47 D:\mplab\projects\spi\spi.X\spi.c
+[v _spi_send spi_send `(v  1 e 1 0 ]
+{
+[v spi_send@sending sending `uc  1 a 1 wreg ]
+[v spi_send@sending sending `uc  1 a 1 wreg ]
+[v spi_send@sending sending `uc  1 a 1 0 ]
+"51
+} 0
+"12
+[v _spi_init spi_init `(v  1 e 1 0 ]
+{
+[v spi_init@mode mode `uc  1 a 1 wreg ]
+[v spi_init@mode mode `uc  1 a 1 wreg ]
+[v spi_init@sample sample `uc  1 p 1 0 ]
+[v spi_init@select select `uc  1 p 1 1 ]
+[v spi_init@pol pol `uc  1 p 1 2 ]
+[v spi_init@mode mode `uc  1 a 1 4 ]
+"45
+} 0
